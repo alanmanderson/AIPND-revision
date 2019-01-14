@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# */AIPND-revision/intropyproject-classify-pet-images/classify_images.py
+# */AIPND-revision/intropyproject-classify-pet-images/classify_images_hints.py
 #                                                                             
 # PROGRAMMER: 
 # DATE CREATED:                                 
 # REVISED DATE: 
-# PURPOSE: Create a function classify_images that uses the classifier function 
+# PURPOSE: This is a *hints* file to help guide students in creating the 
+#          function classify_images that uses the classifier function 
 #          to create the classifier labels and then compares the classifier 
 #          labels to the pet image labels. This function inputs:
 #            -The Image Folder as image_dir within classify_images and function 
 #             and as in_arg.dir for function call within main. 
 #            -The results dictionary as results_dic within classify_images 
 #             function and results for the functin call within main.
-#            -The CNN model architecture as model wihtin classify_images function
+#            -The CNN model architecture as model within classify_images function
 #             and in_arg.arch for the function call within main. 
 #           This function uses the extend function to add items to the list 
 #           that's the 'value' of the results dictionary. You will be adding the
