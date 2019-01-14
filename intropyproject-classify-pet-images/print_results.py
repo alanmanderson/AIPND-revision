@@ -62,5 +62,24 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """    
-    None
-                
+    print("Model: " + str(model))
+    print("Number of images: " + str(results_stats_dic['n_images']))
+    print("Number of dog images: " + str(results_stats_dic['n_dogs_img']))          
+    print("Number of non dog images: " + str(results_stats_dic['n_notdogs_img']))
+    
+    for stat in results_stats_dic:
+       if stat[:4] == 'pct_':
+           print(stat + ": " + str(results_stats_dic[stat]))
+
+    if results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'] == results_stats_dic['n_images']:
+        print_incorrect_dogs == False
+
+    if results_stats_dic['n_correct_dogs'] == results_stats_dic['n_correct_breed']:
+        print_incorrect_breed == False
+
+    if print_incorrect_dogs or print_incorrect_breed:
+        for filename in results_dic:
+            if sum(results_dic[filename][3:]) == 1 and print_incorrect_dogs:
+                print("label: " + results_dic[filename][0] + "  classification: " + results_dic[filename][1])
+            if sum(results_dic[filename][3:]) == 2 and results_dic[filename][2] == 0 and print_incorrect_breed:
+                print("label: " + results_dic[filename][0] + "  classification: " + results_dic[filename][1])   
