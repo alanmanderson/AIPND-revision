@@ -1,0 +1,72 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                Computer_01.jpg  label:                   computer
+ 2 key:                     Dog_01.jpg  label:                        dog
+ 3 key:                     Dog_02.jpg  label:                        dog
+ 4 key:            Grizzly_bear_01.jpg  label:               grizzly bear
+
+     MATCH:
+
+               Computer_01.jpg: 
+Real:                   computer   Classifier:    notebook, notebook computer
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:        otterhound, otter hound
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:        otterhound, otter hound
+
+           Grizzly_bear_01.jpg: 
+Real:               grizzly bear   Classifier: brown bear, bruin, ursus arctos
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+     MATCH:
+
+               Computer_01.jpg: 
+Real:                   computer   Classifier:    notebook, notebook computer  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:        otterhound, otter hound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:        otterhound, otter hound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+           Grizzly_bear_01.jpg: 
+Real:               grizzly bear   Classifier: brown bear, bruin, ursus arctos  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+{'Computer_01.jpg': ['computer', 'notebook, notebook computer', 1, 0, 0], 'Dog_01.jpg': ['dog', 'otterhound, otter hound', 0, 1, 1], 'Dog_02.jpg': ['dog', 'otterhound, otter hound', 0, 1, 1], 'Grizzly_bear_01.jpg': ['grizzly bear', 'brown bear, bruin, ursus arctos', 0, 0, 0]}
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog:   1.0 Pct Corr NOTdog:   1.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+Model: alexnet
+Number of images: 4
+Number of dog images: 2
+Number of non dog images: 2
+pct_match: 0.25
+pct_correct_dogs: 1.0
+pct_correct_breed: 0.0
+pct_correct_notdogs: 1.0
+label: dog  classification: otterhound, otter hound
+label: dog  classification: otterhound, otter hound
+
+** Total Elapsed Runtime: 0:0:0

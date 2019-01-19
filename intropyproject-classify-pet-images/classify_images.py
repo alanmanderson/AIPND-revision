@@ -68,8 +68,9 @@ def classify_images(images_dir, results_dic, model):
     for filename in results_dic:
         full_path = images_dir + "/" + filename
         classification = classifier(full_path, model)
+        classification = classification.lower().strip()
         results_dic[filename].append(classification)
-        if results_dic[filename][0] in classification.lower().strip():
+        if results_dic[filename][0] in classification:
             matches = 1
         else:
             matches = 0
