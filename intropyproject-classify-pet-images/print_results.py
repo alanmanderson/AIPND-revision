@@ -72,10 +72,16 @@ def print_results(results_dic, results_stats_dic, model,
            print(stat + ": " + str(results_stats_dic[stat]))
 
     if results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'] == results_stats_dic['n_images']:
-        print_incorrect_dogs == False
+        if print_incorrect_dogs: print("There are no incorrect dog/not dog classifications")
+        print_incorrect_dogs = False
+    else:
+        if print_incorrect_dogs: print("Incorrect dog/not dog classifications: ")
 
     if results_stats_dic['n_correct_dogs'] == results_stats_dic['n_correct_breed']:
-        print_incorrect_breed == False
+        if print_incorrect_breed: print("There are no incorrect dog breed classifications")
+        print_incorrect_breed = False
+    else:
+        if print_incorrect_breed: print("Incorrect dog breed classifications:")
 
     if print_incorrect_dogs or print_incorrect_breed:
         for filename in results_dic:
