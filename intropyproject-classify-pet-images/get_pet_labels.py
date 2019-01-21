@@ -18,6 +18,7 @@
 ##
 # Imports python modules
 from os import listdir
+from os.path import splitext
 
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create 
@@ -44,7 +45,8 @@ def get_pet_labels(image_dir):
     # function
     results_dic = {}
     for filename in listdir(image_dir):
-        label = filename.rsplit('_', 1)
-        label = label[0].lower().replace('_',' ')
-        results_dic[filename] = [label]
+        if filename.startswith('.'): continue
+        name, extension = splitext(filename)
+        parts = name.split('_')
+        results_dic[filename] = [' '.join([x.lower() for x in parts if x.isalpha()])]
     return results_dic
